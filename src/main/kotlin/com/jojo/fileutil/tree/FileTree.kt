@@ -48,7 +48,7 @@ class FileTree(private val root: Node) {
         private const val SPACE_3 = "   "
         private const val SPACE_4 = "    "
         private const val DASH = '─'
-        private const val DASH_2 = "─"
+        private const val DASH_2 = "──"
         private const val BRANCH_I = '│'
         private const val BRANCH_E = '├'
         private const val BRANCH_L = '└'
