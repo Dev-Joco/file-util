@@ -1,15 +1,20 @@
 package com.jojo.fileutil.tree
 
 import java.io.File
+import java.lang.Exception
 
 object FileTreeBuilder {
 
-    fun build(path: String): FileTree {
+    fun build(path: String): FileTree? {
         val file = File(path)
         val rootNode = Node.newInstance(file)
 
-        if (rootNode is DirectoryNode) {
-            traverse(file, rootNode)
+        try {
+            if (rootNode is DirectoryNode) {
+                traverse(file, rootNode)
+            }
+        } catch (e: Exception) {
+            return null
         }
 
         return FileTree(rootNode)
