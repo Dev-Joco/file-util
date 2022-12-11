@@ -35,7 +35,7 @@ data class DirectoryNode(
     override val isLeaf: Boolean get() = children.isEmpty()
     override val isLastChild: Boolean get() = parent?.children?.last() == this || isRoot
 
-    val children: MutableList<Node> = mutableListOf()
+    private val children: MutableList<Node> = mutableListOf()
 
     val size: Int get() = children.size
     val firstChild: Node get() = children.first()
@@ -70,7 +70,7 @@ data class FileNode(
 
     override var parent: DirectoryNode? = null
     override val isLeaf: Boolean = true
-    override val isLastChild: Boolean get() = parent?.children?.last() == this || isRoot
+    override val isLastChild: Boolean get() = parent?.lastChild == this || isRoot
 
     override fun toString(): String = name
 }
