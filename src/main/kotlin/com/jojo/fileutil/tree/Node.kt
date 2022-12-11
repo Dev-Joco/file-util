@@ -48,6 +48,14 @@ data class DirectoryNode(
 
     override fun toString(): String = "($name)"
 
+    fun add(node: Node) {
+        children.add(node)
+    }
+
+    fun sort() {
+        children.sort()
+    }
+
     fun makeCompactPackage(): List<DirectoryNode> {
         val pack = mutableListOf(this)
 

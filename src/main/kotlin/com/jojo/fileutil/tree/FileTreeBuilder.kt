@@ -22,13 +22,13 @@ object FileTreeBuilder {
             val child = Node.newInstance(subFile)
             child.parent = parent
 
-            parent.children.add(child)
+            parent.add(child)
 
             if (child is DirectoryNode) {
                 traverse(subFile, child)
             }
 
-            parent.children.sort()
+            parent.sort()
         }
     }
 }
